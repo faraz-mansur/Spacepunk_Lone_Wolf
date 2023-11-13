@@ -7,6 +7,8 @@ using TMPro;
 public class ShootPlayer : MonoBehaviour
 {
     public GameObject bullet;
+    private Vector3 target;
+    public Camera fpsCam;
 
     //bullet force
     public float shootForce, upwardForce;
@@ -76,15 +78,10 @@ public class ShootPlayer : MonoBehaviour
         readyToShoot = false;
 
         //Find the exact hit position using a raycast
-        // Ray ray = fpsCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0)); //Just a ray through the middle of your current view
-        // RaycastHit hit;
 
-        //Find the exact hit position using a raycast
-        // Instead of a ray through the middle of the current view, we want the ray to follow its straight path
-        // through the center of the crosshair. This is done by using the attackPoint transform.
-        Ray ray = new Ray(attackPoint.position, attackPoint.forward);
+        Ray ray = fpsCam.ScreenPointToRay(Input.mousePosition);
+
         RaycastHit hit;
-
 
         //check if ray hits something
         Vector3 targetPoint;
