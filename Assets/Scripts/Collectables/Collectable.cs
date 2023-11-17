@@ -4,7 +4,10 @@ public class Collectable : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collectable collected!");
-        this.gameObject.SetActive(false);
+        if (this.tag == "Currency")
+        {
+            Debug.Log("Currency Collected");
+            this.gameObject.SetActive(false);
+        }
     }
 }

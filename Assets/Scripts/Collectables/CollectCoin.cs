@@ -8,8 +8,11 @@ public class CollectCoin : MonoBehaviour
 
     void onTriggerEnter(Collider other)
     {
-        coinFX.Play();
-        Debug.Log("Coin Collected");
-        this.gameObject.SetActive(false);
+        if (this.tag == "Currency")
+        {
+            coinFX.Play();
+            Debug.Log("Coin Collected");
+            this.gameObject.SetActive(false);
+        }
     }
 }
