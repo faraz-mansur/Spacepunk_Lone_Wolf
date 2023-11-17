@@ -12,18 +12,13 @@ public class CollisionPlayer : MonoBehaviour
         statusPlayer = playerRb.GetComponent<StatusPlayer>();
     }
 
-    // void OnCollisionEnter(Collision collision)
-    // {
-    //     Debug.Log("Player Collision");
-    //     statusPlayer.health -= 50;
-    // }
-
     void onTriggerEnter(Collider other)
     {
         // if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "EnemyBullet" || other.gameObject.tag == "EnvObject")
         // {
             Debug.Log("Collision on player");
             statusPlayer.health -= 50;
+            Debug.Log("Player health: " + statusPlayer.health);
         // }
     }
 
