@@ -9,9 +9,9 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     
     // if the bullet rigidbody collides with another rigidbody, destroy the bullet
-    void OnCollisionEnter(Collision collision)
+ void onTriggerEnter(Collider other)
     {
+        Debug.Log("Collision with bullet");
         Destroy(bullet);
     }
-
 }

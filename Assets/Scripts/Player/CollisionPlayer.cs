@@ -14,40 +14,32 @@ public class CollisionPlayer : MonoBehaviour
 
     // void OnCollisionEnter(Collision collision)
     // {
-    //     Debug.Log("Collision");
+    //     Debug.Log("Player Collision");
     //     statusPlayer.health -= 50;
     // }
 
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            Debug.Log("Collision");
-            statusPlayer.health -= 50;
-        }
-    }
     void onTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Enemy")
-        {
-            print("Collision");
+        // if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "EnemyBullet" || other.gameObject.tag == "EnvObject")
+        // {
+            Debug.Log("Collision on player");
             statusPlayer.health -= 50;
-        }
+        // }
     }
 
-    void onTriggerStay(Collider other)
-    {
-        if (other.gameObject.tag == "Enemy")
-        {
-            print("Collision");
-        }
-    }
+    // void onTriggerStay(Collider other)
+    // {
+    //     if (other.gameObject.tag == "Enemy")
+    //     {
+    //         print("Collision");
+    //     }
+    // }
 
-    void onTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Enemy")
-        {
-            print("Collision");
-        }
-    }
+    // void onTriggerExit(Collider other)
+    // {
+    //     if (other.gameObject.tag == "Enemy")
+    //     {
+    //         print("Collided with enemy");
+    //     }
+    // }
 }

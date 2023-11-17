@@ -98,7 +98,8 @@ public class PlayerMove : MonoBehaviour
     private void MovePlayer()
     {
         Vector3 MoveVector = transform.TransformDirection(PlayerMovementInput) * Speed;
-        PlayerBody.velocity = new Vector3(MoveVector.x, MoveVector.y, PlayerBody.velocity.z);
+        PlayerBody.transform.Translate(MoveVector * Time.deltaTime, Space.World);
+        // PlayerBody.velocity = new Vector3(MoveVector.x, MoveVector.y, PlayerBody.velocity.z);
         // float targetZRotation = Mathf.Clamp(
         //     Input.GetAxis("Horizontal") * zRotationSpeed * Time.deltaTime,
         //     -zMaxRotation,
