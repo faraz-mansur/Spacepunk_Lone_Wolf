@@ -14,7 +14,7 @@ public class PlayerMove : MonoBehaviour
     public float acceleration = 5f;
     public float deceleration = 10f;
 
-    public float boost;
+    public StatusPlayer statusPlayer;
     public float zRotationSpeed,
         zMaxRotation,
         xRotationSpeed,
@@ -52,20 +52,20 @@ public class PlayerMove : MonoBehaviour
     {
 
         // if the player hits spacebar, increase the speed of the level
-        if (throttle && boost > 0f)
+        if (throttle && statusPlayer.boost > 0f)
         {
             if (levelMovement.enginePower < maxSpeed)
             {
                 levelMovement.enginePower += acceleration;
-                boost -= 1f;
+                statusPlayer.boost -= 1f;
             }
             else
             {
-                boost -= 1f;
+                statusPlayer.boost -= 1f;
             }
         }
 
-        else if ((!throttle && levelMovement.enginePower > minSpeed) || (boost <= 0f && levelMovement.enginePower > minSpeed))
+        else if ((!throttle && levelMovement.enginePower > minSpeed) || (statusPlayer.boost <= 0f && levelMovement.enginePower > minSpeed))
         {
             if (levelMovement.enginePower - deceleration < minSpeed)
             {

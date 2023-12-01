@@ -7,6 +7,7 @@ public class StatusPlayer : MonoBehaviour
 
     private bool _isDead = false;
     public float health = 100f;
+    public float boost = 250f;
     public Rigidbody PlayerBody;
 
     void Update()
