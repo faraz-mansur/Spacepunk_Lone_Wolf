@@ -1,40 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CollisionPlayer : MonoBehaviour
 {
-    public Rigidbody playerRb;
-    private StatusPlayer statusPlayer;
-
-    private void Start()
+    public StatusPlayer statusPlayer;
+ 
+    //Upon collision with another GameObject, this GameObject will reverse direction
+    private void OnTriggerEnter(Collider other)
     {
-        statusPlayer = playerRb.GetComponent<StatusPlayer>();
+        if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "EnemyBullet")
+        {
+            // Debug.Log("Player Collision with Enemy");
+            statusPlayer.health -= 10;
+        }
     }
-
-    void onTriggerEnter(Collider other)
-    {
-        // if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "EnemyBullet" || other.gameObject.tag == "EnvObject")
-        // {
-            Debug.Log("Collision on player");
-            statusPlayer.health -= 50;
-            Debug.Log("Player health: " + statusPlayer.health);
-        // }
-    }
-
-    // void onTriggerStay(Collider other)
-    // {
-    //     if (other.gameObject.tag == "Enemy")
-    //     {
-    //         print("Collision");
-    //     }
-    // }
-
-    // void onTriggerExit(Collider other)
-    // {
-    //     if (other.gameObject.tag == "Enemy")
-    //     {
-    //         print("Collided with enemy");
-    //     }
-    // }
 }

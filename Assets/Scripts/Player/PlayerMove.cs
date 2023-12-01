@@ -4,7 +4,17 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-// public bool throttle => Input.GetKey(KeyCode.Space);
+
+    public LevelMovement levelMovement;
+    public bool throttle => Input.GetKey(KeyCode.Space);
+
+    public float maxSpeed = 50f;
+    public float minSpeed = 10f;
+
+    public float acceleration = 5f;
+    public float deceleration = 10f;
+
+    public float boost;
     public float zRotationSpeed,
         zMaxRotation,
         xRotationSpeed,
@@ -41,7 +51,31 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
 
-        // check if the player has collided
+        // if the player hits spacebar, increase the speed of the level
+        if (throttle && boost > 0f)
+        {
+            if (levelMovement.enginePower < maxSpeed)
+            {
+                levelMovement.enginePower += acceleration;
+                boost -= 1f;
+            }
+            else
+            {
+                boost -= 1f;
+            }
+        }
+
+        else if ((!throttle && levelMovement.enginePower > minSpeed) || (boost <= 0f && levelMovement.enginePower > minSpeed))
+        {
+            if (levelMovement.enginePower - deceleration < minSpeed)
+            {
+                levelMovement.enginePower = minSpeed;
+            }
+            else
+            {
+                levelMovement.enginePower -= deceleration;
+            }
+        }
 
         // For Cursor Movement
 
