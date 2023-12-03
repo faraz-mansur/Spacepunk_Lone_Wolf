@@ -34,8 +34,8 @@ public class PlayerMove : MonoBehaviour
 
     // enginePower
 
-    private float zAngle = 0,
-        xAngle = 0;
+    // private float zAngle = 0,
+        // xAngle = 0;
 
     public float xRange = 20;
     public float yRange = 20;

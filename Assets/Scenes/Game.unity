@@ -836,8 +836,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -242.4, y: -54.2}
-  m_SizeDelta: {x: 250, y: 10}
+  m_AnchoredPosition: {x: -193, y: -56}
+  m_SizeDelta: {x: 350, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &84038456
 MonoBehaviour:
@@ -898,9 +898,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 250
+  m_MaxValue: 500
   m_WholeNumbers: 1
-  m_Value: 250
+  m_Value: 500
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -13713,7 +13713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  boost: 250
+  boost: 500
   PlayerBody: {fileID: 1225367453}
 --- !u!114 &1225367452
 MonoBehaviour:
