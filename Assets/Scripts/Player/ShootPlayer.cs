@@ -37,6 +37,9 @@ public class ShootPlayer : MonoBehaviour
     //bug fixing :D
     public bool allowInvoke = true;
 
+    public AudioSource pewPewSrc;
+    public AudioClip pewPewClip;
+
     private void Awake()
     {
         //make sure magazine is full
@@ -106,11 +109,13 @@ public class ShootPlayer : MonoBehaviour
         currentBullet.transform.forward = directionWithSpread.normalized;
         currentBullet.GetComponent<RayShotBehaviour>().setTarget(targetPoint);
         GameObject.Destroy(currentBullet, 5f);
-        Debug.Log("Target: " + targetPoint);
+        // Debug.Log("Target: " + targetPoint);
 
         //Add forces to bullet
         // currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootForce, ForceMode.Impulse);
         currentBullet.transform.Translate(directionWithSpread.normalized * shootForce * Time.deltaTime, Space.World);
+        pewPewSrc.clip = pewPewClip;
+        pewPewSrc.Play();
         // currentBullet.GetComponent<Rigidbody>().AddForce(fpsCam.transform.up * upwardForce, ForceMode.Impulse);
 
         //Instantiate muzzle flash, if you have one

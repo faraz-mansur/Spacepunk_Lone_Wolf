@@ -9,7 +9,7 @@ public class CollisionPlayer : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "EnemyBullet")
         {
-            // Debug.Log("Player Collision with Enemy");
+            Debug.Log("Player hit by Enemy");
             statusPlayer.health -= 10;
         }
     }

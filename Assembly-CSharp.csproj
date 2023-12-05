@@ -86,6 +86,7 @@
      <Compile Include="Assets\VolumetricLines\BuiltInRenderPipeline\ExampleScenes\ExampleScripts\CannonBehavior.cs" />
      <Compile Include="Assets\Scripts\Collectables\CollectCoin.cs" />
      <Compile Include="Assets\Scripts\PlayerHUD\BoostSystem.cs" />
+     <Compile Include="Assets\Scripts\Enemy\GroundEnemy\enemyStatus.cs" />
      <Compile Include="Assets\Scripts\Environment\LevelStarter.cs" />
      <Compile Include="Assets\Scripts\Environment\LevelBoundary.cs" />
      <Compile Include="Assets\Scripts\Collectables\RotateObject.cs" />

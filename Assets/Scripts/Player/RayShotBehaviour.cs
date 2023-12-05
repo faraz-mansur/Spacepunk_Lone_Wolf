@@ -14,7 +14,10 @@ public class RayShotBehaviour : MonoBehaviour
  
  void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Hit registered for shot behaviour through OnCollisionEnter");
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Debug.Log("Hit enemy BOOM! through OnCollisionEnter");
+        }
         explode();
         Destroy(bullet);
         return;
@@ -22,7 +25,7 @@ public class RayShotBehaviour : MonoBehaviour
 
     private void onTriggerEnter(Collider other)
     {
-        Debug.Log("Hit registered for shot behaviour throuygh onTriggerEnter");
+        Debug.Log("Hit registered for shot behaviour through onTriggerEnter");
         explode();
         Destroy(bullet);
         return;
@@ -36,7 +39,7 @@ public class RayShotBehaviour : MonoBehaviour
         float step = speed * Time.deltaTime;
         if (m_target != null)
         {
-            Debug.Log("Position: " + transform.position + " Target: " + m_target + " Step: " + step + "");
+            // Debug.Log("Position: " + transform.position + " Target: " + m_target + " Step: " + step + "");
             if (transform.position == m_target)
             {
                 Debug.Log("Hit enemy BOOM!");
@@ -54,7 +57,7 @@ public class RayShotBehaviour : MonoBehaviour
 
     public void setTarget(Vector3 target)
     {
-        Debug.Log("Target set: " + target + "");
+        // Debug.Log("Target set: " + target + "");
         m_target = target;
     }
 

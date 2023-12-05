@@ -8,6 +8,7 @@ TagManager:
   - EnvObject
   - Currency
   - EnemyBullet
+  - playerRayShot
   layers:
   - Default
   - TransparentFX
