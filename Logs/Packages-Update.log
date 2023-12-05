@@ -67,3 +67,11 @@ The following packages were added:
   com.unity.render-pipelines.universal@14.0.8
   com.unity.test-framework@1.1.33
   com.unity.visualeffectgraph@14.0.8
+
+=== Mon Dec  4 18:18:21 2023
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.postprocessing@3.2.2

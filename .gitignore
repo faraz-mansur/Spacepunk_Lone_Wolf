@@ -71,3 +71,9 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+/[Aa]ssets/Fantasy Skybox FREE
+/[Aa]ssets/UnityTechnologies
+/[Aa]ssets/VolumetricLines
+/[Aa]ssets/VolumetricLines.meta
+/[Aa]ssets/UnityTechnologies.meta
+/[Aa]ssets/Fantasy Skybox FREE.meta

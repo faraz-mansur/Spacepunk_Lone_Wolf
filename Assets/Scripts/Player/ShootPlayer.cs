@@ -101,12 +101,16 @@ public class ShootPlayer : MonoBehaviour
         Vector3 directionWithSpread = directionWithoutSpread + new Vector3(x, y, 0); //Just add spread to last direction
 
         //Instantiate bullet/projectile
-        GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity); //store instantiated bullet in currentBullet
+        GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity) as GameObject; //store instantiated bullet in currentBullet
         //Rotate bullet to shoot direction
         currentBullet.transform.forward = directionWithSpread.normalized;
+        currentBullet.GetComponent<RayShotBehaviour>().setTarget(targetPoint);
+        GameObject.Destroy(currentBullet, 5f);
+        Debug.Log("Target: " + targetPoint);
 
         //Add forces to bullet
-        currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootForce, ForceMode.Impulse);
+        // currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootForce, ForceMode.Impulse);
+        currentBullet.transform.Translate(directionWithSpread.normalized * shootForce * Time.deltaTime, Space.World);
         // currentBullet.GetComponent<Rigidbody>().AddForce(fpsCam.transform.up * upwardForce, ForceMode.Impulse);
 
         //Instantiate muzzle flash, if you have one
