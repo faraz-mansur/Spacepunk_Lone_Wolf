@@ -28,5 +28,15 @@ void FixedUpdate()
       }
 
    }
+   void onTriggerEnter(Collider other)
+   {
+     Debug.Log("Hit registered on SpaceshipEnemy1 through onTriggerEnter");
+   }
+
+   void OnCollisionEnter(Collision collision)
+   {
+     Debug.Log("Hit registered on SpaceshipEnemy1 through OnCollisionEnter");
+   }
+   
 
 }

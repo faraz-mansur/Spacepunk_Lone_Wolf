@@ -4,22 +4,27 @@ using UnityEngine;
 
 public class RayShotBehaviour : MonoBehaviour
 {
-
     public GameObject bullet;
     public Vector3 m_target;
     public GameObject collisionExplosion;
     public float speed;
-    
+
     // if the bullet rigidbody collides with another rigidbody, destroy the bullet
- 
- void OnCollisionEnter(Collision collision)
+
+    void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.tag == "PlayerSpaceship")
+        {
+            Debug.Log("Enemy bullet hit player through OnCollisionEnter");
+        }
+        // Debug.Log("Hit registered for bullet for shot behaviour through OnCollisionEnter");
         if (collision.gameObject.tag == "Enemy")
         {
-            Debug.Log("Hit enemy BOOM! through OnCollisionEnter");
+            Debug.Log("Player bullet hit enemy through OnCollisionEnter");
+            explode();
         }
-        explode();
-        Destroy(bullet);
+        // Debug.Log(this.gameObject.tag);
+        // Destroy(bullet);
         return;
     }
 
@@ -30,12 +35,11 @@ public class RayShotBehaviour : MonoBehaviour
         Destroy(bullet);
         return;
     }
-    
 
     // else if the bullet goes out of bounds, destroy the bullet
-    void Update ()
+    void Update()
     {
-        transform.position += transform.forward * Time.deltaTime * 300f;// The step size is equal to speed times frame time.
+        transform.position += transform.forward * Time.deltaTime * 300f; // The step size is equal to speed times frame time.
         float step = speed * Time.deltaTime;
         if (m_target != null)
         {
@@ -48,8 +52,14 @@ public class RayShotBehaviour : MonoBehaviour
             }
             transform.position = Vector3.MoveTowards(transform.position, m_target, step);
         }
-
-        else if (bullet.transform.position.y > 100 || bullet.transform.position.y < -100 || bullet.transform.position.x > 100 || bullet.transform.position.x < -100 || bullet.transform.position.z > 100 || bullet.transform.position.z < -100)
+        else if (
+            bullet.transform.position.y > 100
+            || bullet.transform.position.y < -100
+            || bullet.transform.position.x > 100
+            || bullet.transform.position.x < -100
+            || bullet.transform.position.z > 100
+            || bullet.transform.position.z < -100
+        )
         {
             Destroy(bullet);
         }
@@ -63,12 +73,16 @@ public class RayShotBehaviour : MonoBehaviour
 
     void explode()
     {
-        if (collisionExplosion  != null) {
-            GameObject explosion = (GameObject)Instantiate(collisionExplosion, transform.position, transform.rotation);
+        if (collisionExplosion != null)
+        {
+            GameObject explosion = (GameObject)Instantiate(
+                collisionExplosion,
+                transform.position,
+                transform.rotation
+            );
             Destroy(gameObject);
             Destroy(explosion, 1f);
         }
-
     }
 }
 
