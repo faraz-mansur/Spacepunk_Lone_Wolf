@@ -6,6 +6,7 @@ using TMPro;
 
 public class ShootPlayer : MonoBehaviour
 {
+    public StatusPlayer statusPlayer;
     public GameObject bullet;
     private Vector3 target;
     public Camera fpsCam;
@@ -124,6 +125,8 @@ public class ShootPlayer : MonoBehaviour
 
         bulletsLeft--;
         bulletsShot++;
+        statusPlayer.bulletsLeft = bulletsLeft;
+        statusPlayer.bulletsShot = bulletsShot;
 
         //Invoke resetShot function (if not already invoked), with your timeBetweenShooting
         if (allowInvoke)

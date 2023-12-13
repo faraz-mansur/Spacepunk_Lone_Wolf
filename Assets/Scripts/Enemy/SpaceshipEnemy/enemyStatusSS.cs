@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyStatus : MonoBehaviour
+public class enemyStatusSS : MonoBehaviour
 {
     public StatusPlayer statusPlayer;
-    public float health = 100f;
+    public float health = 150f;
     public bool isDead = false;
     public GameObject enemyExplosion;
 
@@ -33,7 +33,7 @@ public class enemyStatus : MonoBehaviour
     //     if (other.gameObject.tag == "playerRayShot")
     //     {
     //         Debug.Log("Hit by player!");
-    //         health -= 40;
+    //         health -= 30;
     //     }
     //     else 
     //     {
@@ -46,7 +46,8 @@ public class enemyStatus : MonoBehaviour
         if (collision.gameObject.tag == "playerRayShot")
         {
             Debug.Log("Hit by player!");
-            health -= 40;
+            health -= 30;
+            
         }
         else 
         {
@@ -61,6 +62,6 @@ public class enemyStatus : MonoBehaviour
         GameObject explosion = (GameObject)Instantiate(enemyExplosion, transform.position, transform.rotation);
         Destroy(gameObject);
         Destroy(explosion, 1f);
-        statusPlayer.score += 10;
+        statusPlayer.score += 15;
     }
 }

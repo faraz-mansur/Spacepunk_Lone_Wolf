@@ -13,9 +13,11 @@ GameObject:
   - component: {fileID: 3033631244920132663}
   - component: {fileID: 163326362667406106}
   - component: {fileID: 1389952405745637538}
+  - component: {fileID: 8700715109201052649}
+  - component: {fileID: 8269020899341291903}
   m_Layer: 0
   m_Name: turret
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,10 +126,47 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &8700715109201052649
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172641133576342219}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2092836026824628808, guid: febcf8c10a9056e4a9a224ee78434fd9, type: 3}
+--- !u!114 &8269020899341291903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1172641133576342219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 074ada9179ab2e4409da49617594c26d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  isDead: 0
+  enemyExplosion: {fileID: 1000011128802252, guid: 96730f8640590934eacb6f860058e7f9, type: 3}
 --- !u!1 &2160355085051430482
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,11 +230,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6190198702954878195}
+  - {fileID: 4757572444219554079}
   - {fileID: 854262125994997135}
   - {fileID: 4975181679704658459}
   - {fileID: 5449782500087663058}
   - {fileID: 720635249489139914}
-  - {fileID: 4757572444219554079}
   m_Father: {fileID: 7368876105314049126}
   m_LocalEulerAnglesHint: {x: 0, y: 110, z: 0}
 --- !u!1 &6876529580142421994
@@ -373,7 +412,7 @@ Transform:
   m_GameObject: {fileID: 9217009188170245783}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

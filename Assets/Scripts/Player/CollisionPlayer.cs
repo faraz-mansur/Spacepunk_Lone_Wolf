@@ -12,5 +12,24 @@ public class CollisionPlayer : MonoBehaviour
             Debug.Log("Player hit by Enemy");
             statusPlayer.health -= 10;
         }
+        if (other.gameObject.tag == "EnvObject")
+        {
+            Debug.Log("Player Collision with environment object");
+            statusPlayer.health -= 5;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBullet")
+        {
+            Debug.Log("Player hit by Enemy");
+            statusPlayer.health -= 10;
+        }
+        if (collision.gameObject.tag == "EnvObject")
+        {
+            Debug.Log("Player Collision with environment object");
+            statusPlayer.health -= 5;
+        }
     }
 }

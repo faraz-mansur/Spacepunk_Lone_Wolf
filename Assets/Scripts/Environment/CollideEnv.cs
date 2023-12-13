@@ -8,7 +8,7 @@ public class CollideEnv : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("Player Collision with environment object");
+            Debug.Log("Collision Environment with Player");
         }
     }
 }

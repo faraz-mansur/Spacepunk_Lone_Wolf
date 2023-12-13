@@ -8,6 +8,8 @@ public class StatusPlayer : MonoBehaviour
     private bool _isDead = false;
     public float health = 100f;
     public float boost = 250f;
+    public int score = 0;
+    int bulletsLeft, bulletsShot; 
     public Rigidbody PlayerBody;
 
     void Update()

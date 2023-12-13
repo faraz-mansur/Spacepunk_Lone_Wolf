@@ -78,7 +78,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   bullet: {fileID: 0}
-  shootForce: 300
+  shootForce: 500
   upwardForce: 0
   distance: 70
   timeBetweenShooting: 1

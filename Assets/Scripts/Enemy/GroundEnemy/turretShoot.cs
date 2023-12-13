@@ -109,11 +109,15 @@ public class turretShoot : MonoBehaviour
         //Instantiate bullet/projectile
         GameObject currentBullet = Instantiate(bullet, attackPoint.position, Quaternion.identity); //store instantiated bullet in currentBullet
         //Rotate bullet to shoot direction
-        currentBullet.transform.forward = directionWithSpread.normalized;
+        // currentBullet.transform.forward += directionWithSpread.normalized * shootForce;
 
         //Add forces to bullet
         currentBullet.GetComponent<Rigidbody>().AddForce(directionWithSpread.normalized * shootForce, ForceMode.Impulse);
+        // if bullet is not destroyed after 5 seconds, destroy it
+        GameObject.Destroy(currentBullet, 5f);
+        // currentBullet.transform.position += directionWithSpread.normalized * shootForce * Time.deltaTime;
         // currentBullet.GetComponent<Rigidbody>().AddForce(fpsCam.transform.up * upwardForce, ForceMode.Impulse);
+
 
         //Instantiate muzzle flash, if you have one
         if (muzzleFlash != null)

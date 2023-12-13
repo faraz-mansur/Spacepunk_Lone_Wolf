@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 851642001466488564}
   - component: {fileID: 6880666540340832795}
   - component: {fileID: 6676045617556969640}
-  - component: {fileID: 418126830925148211}
   - component: {fileID: 4661391927151991780}
   - component: {fileID: 6234887042277502384}
   - component: {fileID: 7920817178535512227}
@@ -107,18 +106,6 @@ MonoBehaviour:
   m_lineColor: {r: 0.034482718, g: 1, b: 0, a: 0}
   m_lineWidth: 66
   m_lightSaberFactor: 0.747
---- !u!114 &418126830925148211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2693653892722926856}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cb039d3a64491f4ebfc852d25b5ee70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!108 &4661391927151991780
 Light:
   m_ObjectHideFlags: 0
@@ -194,6 +181,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 2693653892722926856}
+  m_target: {x: 0, y: 0, z: 0}
+  collisionExplosion: {fileID: 0}
+  speed: 0
 --- !u!54 &7920817178535512227
 Rigidbody:
   m_ObjectHideFlags: 0
