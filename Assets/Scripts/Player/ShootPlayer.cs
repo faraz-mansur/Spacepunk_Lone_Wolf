@@ -126,7 +126,7 @@ public class ShootPlayer : MonoBehaviour
         bulletsLeft--;
         bulletsShot++;
         statusPlayer.bulletsLeft = bulletsLeft;
-        statusPlayer.bulletsShot = bulletsShot;
+        statusPlayer.magazineSize = magazineSize;
 
         //Invoke resetShot function (if not already invoked), with your timeBetweenShooting
         if (allowInvoke)
