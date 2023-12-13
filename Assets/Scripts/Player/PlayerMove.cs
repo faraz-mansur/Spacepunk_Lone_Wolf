@@ -9,7 +9,7 @@ public class PlayerMove : MonoBehaviour
     public bool throttle => Input.GetKey(KeyCode.Space);
 
     public float maxSpeed = 50f;
-    public float minSpeed = 10f;
+    public float minSpeed = 15f;
 
     public float acceleration = 5f;
     public float deceleration = 10f;

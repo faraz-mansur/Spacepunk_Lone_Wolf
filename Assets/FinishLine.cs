@@ -9,6 +9,7 @@ public class FinishLine : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            Debug.Log("Player has reached the finish line!");
             SceneManager.LoadScene("Scenes/ForestLevel");
         }
     }

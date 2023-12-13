@@ -9,13 +9,13 @@ public class CollisionPlayer : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy" || other.gameObject.tag == "EnemyBullet")
         {
-            Debug.Log("Player hit by Enemy");
-            statusPlayer.health -= 10;
+            // Debug.Log("Player hit by Enemy");
+            statusPlayer.health -= 2.5f;
         }
         if (other.gameObject.tag == "EnvObject")
         {
-            Debug.Log("Player Collision with environment object");
-            statusPlayer.health -= 5;
+            // Debug.Log("Player Collision with environment object");
+            statusPlayer.health -= 2.5f;
         }
     }
 
@@ -23,13 +23,13 @@ public class CollisionPlayer : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "EnemyBullet")
         {
-            Debug.Log("Player hit by Enemy");
-            statusPlayer.health -= 10;
+            // Debug.Log("Player hit by Enemy");
+            statusPlayer.health -= 2.5f;
         }
         if (collision.gameObject.tag == "EnvObject")
         {
-            Debug.Log("Player Collision with environment object");
-            statusPlayer.health -= 5;
+            // Debug.Log("Player Collision with environment object");
+            statusPlayer.health -= 2.5f;
         }
     }
 }
